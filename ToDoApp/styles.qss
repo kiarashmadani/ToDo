@@ -1,0 +1,68 @@
+DragArea QPushButton#closeButton,
+DragArea QPushButton#minimizeButton,
+DragArea QPushButton#expandButton {
+    min-height: 14px;
+    max-height: 14px;
+    min-width:  14px;
+    max-width:  14px;
+
+    border-radius: 7px;
+}
+
+DragArea QPushButton#closeButton,
+DragArea QPushButton#minimizeButton,
+DragArea QPushButton#expandButton {
+    border-radius: 6px;
+    min-width: 12px;
+    max-width: 12px;
+    min-height: 12px;
+    max-height: 12px;
+    padding: 0px;
+    margin: 0px;
+}
+
+DragArea QPushButton#closeButton {
+    background-color: #ED6A5F;
+    border: #E24B41 1px solid;
+}
+DragArea QPushButton#closeButton:hover {
+    background-color: #F07A70;
+    border: #E24B41 1px solid;
+}
+DragArea QPushButton#closeButton:pressed {
+    background-color: #B15048;
+    border: #A14239 1px solid;
+}
+
+DragArea QPushButton#minimizeButton {
+    background-color: #F6BE50;
+    border: #E1A73E 1px solid;
+}
+DragArea QPushButton#minimizeButton:hover {
+    background-color: #F8C96A;
+    border: #E1A73E 1px solid;
+}
+DragArea QPushButton#minimizeButton:pressed {
+    background-color: #B8923B;
+    border: #A67F36 1px solid;
+}
+
+DragArea QPushButton#expandButton {
+    background-color: #61C555;
+    border: #2DAC2F 1px solid;
+}
+DragArea QPushButton#expandButton:hover {
+    background-color: #74CE69;
+    border: #2DAC2F 1px solid;
+}
+DragArea QPushButton#expandButton:pressed {
+    background-color: #4A9741;
+    border: #428234 1px solid;
+}
+
+DragArea QPushButton#closeButton[windowActive="false"],
+DragArea QPushButton#minimizeButton[windowActive="false"],
+DragArea QPushButton#expandButton[windowActive="false"] {
+    background-color: #DDDDDD;
+    border: #D1D0D2 1px solid;
+}

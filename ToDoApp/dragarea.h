@@ -17,6 +17,13 @@ public:
 
 private:
     Ui::DragArea *ui;
+
+    QWidget *mainWindow = this->window();
+
+private slots:
+    void closeWindow();
+    void minimizeWindow();
+    void expandWindow();
 };
 
 #endif // DRAGAREA_H

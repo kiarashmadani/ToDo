@@ -1,13 +1,14 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
+#ifdef Q_OS_WIN
+#include <windows.h>
+#endif
+
 namespace Ui {
 class MainWindow;
 }
-QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
@@ -15,9 +16,24 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow() override;
+    ~MainWindow();
+
+protected:
+#ifdef Q_OS_WIN
+    // Intercepts raw Win32 messages - needed for manual resize-border
+    // hit-testing and to strip the native non-client frame.
+    bool nativeEvent(const QByteArray &eventType, void *message, qintptr *result) override;
+#endif
+    void paintEvent(QPaintEvent *event) override;
 
 private:
     Ui::MainWindow *ui;
+
+    void setupWindowFlags();
+    void enableAcrylicBlur();
+    void enableRoundedCorners();
+    void extendFrame();
+
+private slots:
+    void onApplicationStateChanged(Qt::ApplicationState state);
 };
-#endif // MAINWINDOW_H

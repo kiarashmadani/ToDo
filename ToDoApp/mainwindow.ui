@@ -19,7 +19,7 @@
      <widget class="DragArea" name="widget" native="true"/>
     </item>
     <item>
-     <widget class="QWidget" name="widget_2" native="true"/>
+     <widget class="QWidget" name="taskView" native="true"/>
     </item>
    </layout>
   </widget>
